@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Cart - Agriculture Mart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #228b22;
+        }
+
+        .checkout-btn {
+            background-color: #228b22;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .checkout-btn:hover {
+            background-color: #1c6b1c;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #228b22;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #1c6b1c;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .bottom-nav i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cart Page Header -->
+    <h2>Your Cart</h2>
+
+    <!-- Proceed to Checkout Button -->
+    <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="/home">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="/orders">
+            <i class="fas fa-shopping-basket"></i> Orders
+        </a>
+        <a href="/account">
+            <i class="fas fa-user"></i> Account
+        </a>
+    </div>
+
+    <script>
+        function proceedToCheckout() {
+            // Assuming user selections were made on the homepage and stored, you can calculate total here
+            // Fetch selected items from local storage or database
+            const selectedItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            
+            // Example total calculation (this would be done based on real data from the user's cart)
+            let total = selectedItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+            // Redirect to payment page with the total
+            window.location.href = `/checkout?total=${total}`;
+        }
+    </script>
+
+</body>
+</html>
+

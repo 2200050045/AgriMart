@@ -1,0 +1,39 @@
+{
+  "uuid": "c4af6b758ccd57864ecb02a3e3b98152",
+  "path": "Offline/street%20light",
+  "name": "street light",
+  "content": "",
+  "created_at": "2023-10-23 19:17:47",
+  "updated_at": "2023-10-23 19:17:47",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "425b39077dcec77ff61184aefd15df0a",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {},
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ]
+      ],
+      "updateTime": 1698068867,
+      "createTime": 1698068867,
+      "histories": [],
+      "created_at": "2023-10-23 19:17:47",
+      "updated_at": "2023-10-23 19:17:47"
+    }
+  ],
+  "sort": [],
+  "title": "street light",
+  "foldername": "street light",
+  "schfilename": "street light.json",
+  "schfilemtime": 1698068867661
+}

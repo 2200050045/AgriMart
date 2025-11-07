@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Agriculture Mart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #228b22;
+        }
+
+        .checkout-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .payment-method {
+            margin: 15px 0;
+        }
+
+        .payment-method input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .payment-details {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"], .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .checkout-btn {
+            background-color: #228b22;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .checkout-btn:hover {
+            background-color: #1c6b1c;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #228b22;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #1c6b1c;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .bottom-nav i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function togglePaymentDetails(method) {
+            // Hide all payment details
+            document.querySelectorAll('.payment-details').forEach(function(detail) {
+                detail.classList.remove('active');
+            });
+
+            // Show the selected payment method's details
+            document.getElementById(method).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Checkout</h2>
+
+    <div class="checkout-container">
+        <h3>Select Payment Method</h3>
+
+        <!-- Payment Methods -->
+        <div class="payment-method">
+            <input type="radio" id="debit-card" name="payment" onclick="togglePaymentDetails('debit-details')" />
+            <label for="debit-card">Debit Card</label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" id="credit-card" name="payment" onclick="togglePaymentDetails('credit-details')" />
+            <label for="credit-card">Credit Card</label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" id="upi" name="payment" onclick="togglePaymentDetails('upi-details')" />
+            <label for="upi">UPI</label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" id="cod" name="payment" onclick="togglePaymentDetails('cod-details')" />
+            <label for="cod">Cash on Delivery</label>
+        </div>
+
+        <!-- Debit Card Details -->
+        <div id="debit-details" class="payment-details">
+            <div class="form-group">
+                <label for="debit-card-number">Card Number</label>
+                <input type="number" id="debit-card-number" placeholder="Enter your debit card number" />
+            </div>
+            <div class="form-group">
+                <label for="debit-cvv">CVV</label>
+                <input type="number" id="debit-cvv" placeholder="CVV" />
+            </div>
+            <div class="form-group">
+                <label for="debit-expiry">Expiry Date</label>
+                <input type="text" id="debit-expiry" placeholder="MM/YY" />
+            </div>
+        </div>
+
+        <!-- Credit Card Details -->
+        <div id="credit-details" class="payment-details">
+            <div class="form-group">
+                <label for="credit-card-number">Card Number</label>
+                <input type="number" id="credit-card-number" placeholder="Enter your credit card number" />
+            </div>
+            <div class="form-group">
+                <label for="credit-cvv">CVV</label>
+                <input type="number" id="credit-cvv" placeholder="CVV" />
+            </div>
+            <div class="form-group">
+                <label for="credit-expiry">Expiry Date</label>
+                <input type="text" id="credit-expiry" placeholder="MM/YY" />
+            </div>
+        </div>
+
+        <!-- UPI Details -->
+        <div id="upi-details" class="payment-details">
+            <div class="form-group">
+                <label for="upi-id">UPI ID</label>
+                <input type="text" id="upi-id" placeholder="Enter your UPI ID (e.g., abc@upi)" />
+            </div>
+            <div class="form-group">
+                <label for="upi-provider">Select UPI Provider</label>
+                <select id="upi-provider">
+                    <option value="paytm">Paytm</option>
+                    <option value="phonepe">PhonePe</option>
+                    <option value="gpay">Google Pay</option>
+                    <option value="bhim">BHIM</option>
+                    <option value="moneyone">MoneyOne</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Cash on Delivery Details -->
+        <div id="cod-details" class="payment-details">
+            <p>Cash on Delivery is available. Pay when you receive your items.</p>
+        </div>
+
+        <!-- Checkout Button -->
+        <button class="checkout-btn">Complete Payment</button>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="/home">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="/orders">
+            <i class="fas fa-shopping-basket"></i> Orders
+        </a>
+        <a href="/account">
+            <i class="fas fa-user"></i> Account
+        </a>
+    </div>
+
+</body>
+</html>

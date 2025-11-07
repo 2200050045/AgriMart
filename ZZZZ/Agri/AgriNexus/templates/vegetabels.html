@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Vegetables - Agriculture Mart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #228b22;
+        }
+
+        .vegetable-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .vegetable {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .vegetable img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .vegetable:hover {
+            transform: scale(1.05);
+        }
+
+        .vegetable h3 {
+            color: #228b22;
+            margin-bottom: 10px;
+        }
+
+        .vegetable select, .vegetable p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .vegetable p {
+            margin-top: 5px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #228b22;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #1c6b1c;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .bottom-nav i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Vegetable Page Header -->
+    <h2>Vegetable Options</h2>
+    <p>Choose from the list of fresh vegetables and select your preferred quantity:</p>
+
+    <!-- Vegetable List -->
+    <div class="vegetable-container">
+        <!-- Tomato -->
+        <div class="vegetable">
+            <img src="{% static 'tomato.webp' %}" alt="Tomato">
+            <h3>Tomato</h3>
+            <select>
+                <option value="30">500g - ₹30</option>
+                <option value="45">1kg - ₹45</option>
+                <option value="50">1.5kg - ₹50</option>
+                <option value="60">2kg - ₹60</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Chillis -->
+        <div class="vegetable">
+            <img src="{% static 'chilli.webp' %}" alt="Chillis">
+            <h3>Chillis</h3>
+            <select>
+                <option value="25">500g - ₹25</option>
+                <option value="35">1kg - ₹35</option>
+                <option value="45">2kg - ₹45</option>
+            </select>
+              <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Onions -->
+        <div class="vegetable">
+            <img src="{% static 'onions.jpg' %}" alt="Onions">
+            <h3>Onions</h3>
+            <select>
+                <option value="85">1kg - ₹85</option>
+                <option value="105">2kg - ₹105</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Potato -->
+        <div class="vegetable">
+            <img src="{% static 'potato.jpg' %}" alt="Potato">
+            <h3>Potato</h3>
+            <select>
+                <option value="40">1kg - ₹40</option>
+                <option value="55">2kg - ₹55</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Cucumber -->
+        <div class="vegetable">
+            <img src="{% static 'cucumber.jpg' %}" alt="Cucumber">
+            <h3>Cucumber</h3>
+            <select>
+                <option value="25">1kg - ₹25</option>
+                <option value="35">2kg - ₹35</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Carrot -->
+        <div class="vegetable">
+            <img src="{% static 'carrot.jpg' %}" alt="Carrot">
+            <h3>Carrot</h3>
+            <select>
+                <option value="45">1kg - ₹45</option>
+                <option value="60">2kg - ₹60</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Soya Beans -->
+        <div class="vegetable">
+            <img src="{% static 'soya beans.jpg' %}" alt="Soya Beans">
+            <h3>Soya Beans</h3>
+            <select>
+                <option value="36">1kg - ₹36</option>
+                <option value="59">1.5kg - ₹59</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Brinjal -->
+        <div class="vegetable">
+            <img src="{% static 'brinjal.webp' %}" alt="Brinjal">
+            <h3>Brinjal</h3>
+            <select>
+                <option value="38">500g - ₹38</option>
+                <option value="51">1.5kg - ₹51</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Califlower -->
+        <div class="vegetable">
+            <img src="{% static 'califlower.jpg' %}" alt="Cauliflower">
+            <h3>Cauliflower</h3>
+            <select>
+                <option value="35">1kg - ₹35</option>
+                <option value="46">2kg - ₹46</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Cabbage -->
+        <div class="vegetable">
+            <img src="{% static 'cabbage.jpg' %}" alt="Cabbage">
+            <h3>Cabbage</h3>
+            <select>
+                <option value="27">1kg - ₹27</option>
+                <option value="42">2kg - ₹42</option>
+            </select>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="/home">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="/orders">
+            <i class="fas fa-shopping-basket"></i> Orders
+        </a>
+        <a href="/account">
+            <i class="fas fa-user"></i> Account
+        </a>
+    </div>
+
+</body>
+</html> 

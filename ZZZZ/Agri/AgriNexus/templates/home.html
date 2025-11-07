@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Mart - Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .search-container button {
+            padding: 10px;
+            background-color: #228b22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #1c6b1c;
+        }
+
+        h2 {
+            color: #228b22;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .category {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 40%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .category img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+
+        .category h3 {
+            color: #228b22;
+            margin-bottom: 15px;
+        }
+
+        .category p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #228b22;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #1c6b1c;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .bottom-nav i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="content">
+    <!-- Search Bar at the Top -->
+    <div class="search-container">
+        <input type="text" placeholder="Search for products, categories..." />
+        <button type="submit">Search</button>
+    </div>
+
+    <!-- Welcome Message -->
+    <h2>Welcome to Agriculture Mart!</h2>
+    <p>Explore your account, orders, and products below.</p>
+
+    <!-- Categories: Grocery and Pesticides with Images -->
+    <div class="category-container">
+       <a href = "{% url "gromart" %}">
+        <div class="category">
+            <img src="{% static 'images.jpeg' %}" alt="Grocery Image">
+            <h3>Grocery</h3></a>
+            <p>Shop for fresh fruits, vegetables, grains, and other groceries to support your farming needs.</p>
+        </div>
+       <a href = "{% url "pesticides" %}">
+        <div class="category">
+            <img src="{% static 'pesticides.png' %}" alt="Pesticides Image">
+            <h3>Pesticides</h3></a>
+            <p>Find a wide range of eco-friendly pesticides and chemicals to protect your crops.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Bottom Navigation Bar -->
+<div class="bottom-nav">
+    <a href="{% url 'home' %}">
+        <i class="fas fa-home"></i> <!-- FontAwesome Icon for Home -->
+        Home
+    </a>
+    <a href="{% url 'Order' %}">
+        <i class="fas fa-shopping-basket"></i> <!-- FontAwesome Icon for Orders -->
+        Orders
+    </a>
+    <a href="{% url 'Account' %}">
+        <i class="fas fa-user"></i> <!-- FontAwesome Icon for Account -->
+        Account
+    </a>
+</div>
+
+</body>
+</html>

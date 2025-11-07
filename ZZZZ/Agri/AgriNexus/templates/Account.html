@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>My Account - E-Commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .profile-section img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+        }
+        .profile-info {
+            font-size: 16px;
+        }
+        .profile-info span {
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 10px;
+            background: #f8f9fa;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Account</h1>
+    </header>
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-info">
+                <p><span>Name:</span> Lahitha</p>
+                <p><span>Email:</span> Lahitha@example.com</p>
+                <p><span>Phone Number:</span> +1234567890</p>
+                <p><span>Address:</span>Vijayawada</p>
+            </div>
+        </div>
+        
+        <!-- Order History -->
+        <div class="section">
+            <h2>Order History</h2>
+            <ul>
+                <li>Order #12345 - Status: Delivered - Date: 2024-01-15</li>
+                <li>Order #12346 - Status: Shipped - Date: 2024-02-05</li>
+                <li>Order #12347 - Status: Pending - Date: 2024-03-01</li>
+            </ul>
+        </div>
+
+        <!-- Preferences -->
+        <div class="section">
+            <h2>Preferences</h2>
+            <p>Newsletter Subscription: <strong>Subscribed</strong></p>
+            <p>Saved Payment Method: <strong>Visa **** 1234</strong></p>
+        </div>
+    </div>
+</body>
+</html>

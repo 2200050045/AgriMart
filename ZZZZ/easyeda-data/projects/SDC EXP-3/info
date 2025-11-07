@@ -1,0 +1,39 @@
+{
+  "uuid": "65ff84a1dbeb157e814fdd26bfa1045b",
+  "path": "Offline/SDC%20EXP-3",
+  "name": "SDC EXP-3",
+  "content": "",
+  "created_at": "2023-07-26 14:34:11",
+  "updated_at": "2023-07-26 14:34:12",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "7f0e3913c41b2c54cde368da63ac9b72",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {},
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ]
+      ],
+      "updateTime": 1690362252,
+      "createTime": 1690362252,
+      "histories": [],
+      "created_at": "2023-07-26 14:34:12",
+      "updated_at": "2023-07-26 14:34:12"
+    }
+  ],
+  "sort": [],
+  "title": "SDC EXP-3",
+  "foldername": "SDC EXP-3",
+  "schfilename": "SDC EXP-3.json",
+  "schfilemtime": 1690362252626
+}

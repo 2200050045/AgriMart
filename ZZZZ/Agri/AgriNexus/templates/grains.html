@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Agriculture Mart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #228b22;
+        }
+
+        .cart-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cart-item {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item-info {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .cart-item-info h3 {
+            color: #228b22;
+            margin: 0;
+        }
+
+        .cart-item-info p {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-quantity select {
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #228b22;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #1c6b1c;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .bottom-nav i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Header -->
+    <h2>Agriculture Products</h2>
+
+    <!-- Selection for Grains -->
+    <div class="cart-container">
+
+        <!-- Rice Selection -->
+        <div class="cart-item">
+            <img src="{% static 'rice.jpg' %}" alt="Rice">
+            <div class="cart-item-info">
+                <h3>Rice</h3>
+                <p>Select Quantity:</p>
+            </div>
+            <div class="cart-item-quantity">
+                <select id="rice-quantity">
+                    <option value="500">1 bag - ₹500</option>
+                    <option value="1100">3 bags - ₹1100</option>
+                    <option value="175">1kg - ₹175</option>
+                    <option value="275">2.5kgs - ₹275</option>
+                </select>
+                <button class="order-button">Order</button>
+            </div>
+        </div>
+
+        <!-- Wheat Selection -->
+        <div class="cart-item">
+            <img src= "{% static 'wheat.jpeg' %}"alt="Wheat">
+            <div class="cart-item-info">
+                <h3>Wheat</h3>
+                <p>Select Quantity:</p>
+            </div>
+            <div class="cart-item-quantity">
+                <select id="wheat-quantity">
+                    <option value="180">1kg - ₹180</option>
+                    <option value="275">2kgs - ₹275</option>
+                </select>
+                <button class="order-button">Order</button>
+            </div>
+        </div>
+
+        <!-- Maize Selection -->
+        <div class="cart-item">
+            <img src= "{% static 'maize.jpeg' %}"alt="Maize">
+            <div class="cart-item-info">
+                <h3>Maize</h3>
+                <p>Select Quantity:</p>
+            </div>
+            <div class="cart-item-quantity">
+                <select id="maize-quantity">
+                    <option value="107">1kg - ₹107</option>
+                    <option value="257">2kgs - ₹257</option>
+                </select>
+                <button class="order-button">Order</button>
+            </div>
+        </div>
+
+        <!-- Millets Selection -->
+        <div class="cart-item">
+            <img src="{% static 'millets.jpg' %}" alt="Millets">
+            <div class="cart-item-info">
+                <h3>Millets</h3>
+                <p>Select Quantity:</p>
+            </div>
+            <div class="cart-item-quantity">
+                <select id="millets-quantity">
+                    <option value="390">1kg - ₹390</option>
+                    <option value="590">2kgs - ₹590</option>
+                </select>
+                <button class="order-button">Order</button>
+            </div>
+        </div>
+
+        <!-- Sorghum Selection -->
+        <div class="cart-item">
+            <img src="{% static 'sorghum.jpg' %}"alt="Sorghum">
+            <div class="cart-item-info">
+                <h3>Sorghum</h3>
+                <p>Select Quantity:</p>
+            </div>
+            <div class="cart-item-quantity">
+                <select id="sorghum-quantity">
+                    <option value="285">1kg - ₹285</option>
+                    <option value="465">2kgs - ₹465</option>
+                </select>
+                <button class="order-button">Order</button>
+            </div>
+        </div>
+
+        <!-- Red Lentil Selection -->
+        <div class="cart-item">
+            <img src= "{% static 'red lintil.jpg' %}"alt="Red Lentil">
+            <div class="cart-item-info">
+                <h3>Red Lentil</h3>
+                <p>Select Quantity:</p>
+            </div>
+            <div class="cart-item-quantity">
+                <select id="red-lentil-quantity">
+                    <option value="135">1kg - ₹135</option>
+                    <option value="247">2kgs - ₹247</option>
+                </select>
+                <button class="order-button">Order</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="/home">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="/orders">
+            <i class="fas fa-shopping-basket"></i> Orders
+        </a>
+        <a href="/account">
+            <i class="fas fa-user"></i> Account
+        </a>
+    </div>
+
+</body>
+</html>

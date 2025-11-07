@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Grocery Options - Agriculture Mart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #228b22;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .category {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .category img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+
+        .category h3 {
+            color: #228b22;
+            margin-bottom: 15px;
+        }
+
+        .category p {
+            font-size: 16px;
+            color: #555;
+        }
+        
+        /* Navigation Back to Main Page */
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link a {
+            color: #228b22;
+            text-decoration: none;
+            font-size: 18px;
+            border: 1px solid #228b22;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .back-link a:hover {
+            background-color: #228b22;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Grocery Page Header -->
+    <h2>Grocery Options</h2>
+    <p>Select the category you're interested in:</p>
+
+    <!-- Fruits, Vegetables, and Grains -->
+    <div class="category-container">
+      <a href = "{% url "fruits" %}">
+         <div class="category">
+            <img src="{% static "fruits.jpg" %}" alt="Fruits">
+            <h3>Fruits</h3>  </a>
+            <p>Fresh and organic fruits available for delivery.</p>
+        </div>
+        <a href = "{% url "vegetables" %}">
+        <div class="category">
+            <img src="{% static "vegetables.jpeg" %}" alt="Vegetables">
+            <h3>Vegetables</h3>        </a>
+            <p>Get farm-fresh vegetables to support healthy living.</p>
+        </div>
+         <a href = "{% url "grains" %}">
+        <div class="category">
+            <img src="{% static "grains.webp" %}" alt="Grains">
+            <h3>Grains</h3>        </a>
+            <p>High-quality grains for your daily nutritional needs.</p>
+        </div>
+    </div>
+
+    <!-- Back to Home Link -->
+    <div class="back-link">
+        <a href="{% url "home" %}">Back to Home</a>
+    </div>
+
+</body>
+</html>

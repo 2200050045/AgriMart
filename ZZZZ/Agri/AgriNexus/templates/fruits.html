@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Fruits - Agriculture Mart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #228b22;
+        }
+
+        .fruit-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .fruit {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .fruit img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .fruit:hover {
+            transform: scale(1.05);
+        }
+
+        .fruit h3 {
+            color: #228b22;
+            margin-bottom: 15px;
+        }
+
+        .fruit p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #228b22;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #228b22;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #1c6b1c;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .bottom-nav i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #228b22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1c6b1c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fruits Page Header -->
+    <h2>Fruit Options</h2>
+    <p>Select from the list of fresh fruits and choose your quantity:</p>
+
+    <!-- Fruit List -->
+    <div class="fruit-container">
+        <!-- Apple -->
+        <div class="fruit">
+            <img src="{% static 'apple.jpg' %}"alt="Apple">
+            <h3>Apple</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="30">500 grams - ₹30</option>
+                <option value="60">1 kg - ₹60</option>note
+                <option value="85">1.5 kgs - ₹85</option>
+                <option value="110">2 kgs - ₹110</option>
+            </select>
+            <div class="price">Price: ₹30</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Banana -->
+        <div class="fruit">
+            <img src= "{% static 'Banana.webp' %}"alt="Banana">
+            <h3>Banana</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="30">1/2 dozen - ₹30</option>
+                <option value="45">Dozen - ₹45</option>
+            </select>
+            <div class="price">Price: ₹30</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Grapes -->
+        <div class="fruit">
+            <img src= "{% static 'grapes.jpg' %}"alt="Grapes">
+            <h3>Grapes</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="59">1 kg - ₹59</option>
+                <option value="105">2 kgs - ₹105</option>
+            </select>
+            <div class="price">Price: ₹59</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Mangoes -->
+        <div class="fruit">
+            <img src="{% static 'Mangoes.webp' %}" alt="Mangoes">
+            <h3>Mangoes</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="75">1 kg - ₹75</option>
+                <option value="154">2 kgs - ₹154</option>
+            </select>
+            <div class="price">Price: ₹75</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Pomegranate -->
+        <div class="fruit">
+            <img src= "{% static 'promoganate.jpg' %}"alt="Pomegranate">
+            <h3>Pomegranate</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="85">1 kg - ₹85</option>
+                <option value="110">2 kgs - ₹110</option>
+            </select>
+            <div class="price">Price: ₹85</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Oranges -->
+        <div class="fruit">
+            <img src= "{% static 'oranges.jpg' %}"alt="Oranges">
+            <h3>Oranges</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="55">1 kg - ₹55</option>
+                <option value="90">2 kgs - ₹90</option>
+            </select>
+            <div class="price">Price: ₹55</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Kiwi -->
+        <div class="fruit">
+            <img src= "{% static 'kiwi.jpeg' %}"alt="Kiwi">
+            <h3>Kiwi</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="95">1 kg - ₹95</option>
+                <option value="165">2 kgs - ₹165</option>
+            </select>
+            <div class="price">Price: ₹95</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Melon -->
+        <div class="fruit">
+            <img src= "{% static 'melon.jpeg' %}"alt="Melon">
+            <h3>Melon</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="40">1 kg - ₹40</option>
+                <option value="80">2 kgs - ₹80</option>
+            </select>
+            <div class="price">Price: ₹40</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Fig -->
+        <div class="fruit">
+            <img src="{% static 'fig.jpg' %}" alt="Fig">
+            <h3>Fig</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="95">1 kg - ₹95</option>
+                <option value="145">2 kgs - ₹145</option>
+            </select>
+            <div class="price">Price: ₹95</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+
+        <!-- Guava -->
+        <div class="fruit">
+            <img src="{% static 'guvva.jpg' %}" alt="Guava">
+            <h3>Guava</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="49">1 kg - ₹49</option>
+                <option value="80">2 kgs - ₹80</option>
+            </select>
+            <div class="price">Price: ₹49</div>
+            <a href="{% url 'Order' %}">Order</a>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="/home">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="/orders">
+            <i class="fas fa-shopping-basket"></i> Orders
+        </a>
+        <a href="/account">
+            <i class="fas fa-user"></i> Account

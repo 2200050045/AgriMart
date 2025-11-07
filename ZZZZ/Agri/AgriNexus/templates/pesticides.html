@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Pesticides - Agriculture Mart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #228b22;
+        }
+
+        .pesticide-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .pesticide {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pesticide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .pesticide:hover {
+            transform: scale(1.05);
+        }
+
+        .pesticide h3 {
+            color: #228b22;
+            margin-bottom: 15px;
+        }
+
+        .pesticide p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #228b22;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #228b22;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #1c6b1c;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .bottom-nav i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #228b22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1c6b1c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pesticides Page Header -->
+    <h2>Pesticide Options</h2>
+    <p>Select from the list of pesticides and choose your quantity:</p>
+
+    <!-- Pesticide List -->
+    <div class="pesticide-container">
+        <!-- Metaldehyde -->
+        <div class="pesticide">
+            <img src= "{% static 'metaldehyde.jpg' %}"alt="Metaldehyde">
+            <h3>Metaldehyde</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="250">1 pack - ₹250</option>
+                <option value="420">2 packs - ₹420</option>
+            </select>
+            <div class="price">Price: ₹250</div>
+            <button><a href="{% url 'Order' %}">Order</a></button>
+        </div>
+
+        <!-- Boric Acid -->
+        <div class="pesticide">
+            <img src="{% static 'boric acid.jpg' %}" alt="Boric Acid">
+            <h3>Boric Acid</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="280">1 pack - ₹280</option>
+                <option value="430">3 packs - ₹430</option>
+            </select>
+            <div class="price">Price: ₹280</div>
+            <button><a href="{% url 'Order' %}">Order</a></button>
+        </div>
+
+        <!-- Glyphosate -->
+        <div class="pesticide">
+            <img src= "{% static 'glypho.png' %}" alt="Glyphosate">
+            <h3>Glyphosate</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="180">500 ml - ₹180</option>
+                <option value="255">1 pack - ₹255</option>
+            </select>
+            <div class="price">Price: ₹180</div>
+            <button><a href="{% url 'Order' %}">Order</a></button>
+        </div>
+
+        <!-- Acephate -->
+        <div class="pesticide">
+            <img src= "{% static 'acephate.jpg' %}" alt="Acephate">
+            <h3>Acephate</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="199">1 pack - ₹199</option>
+                <option value="98">500 grams - ₹98</option>
+                <option value="245">2 packs - ₹245</option>
+            </select>
+            <div class="price">Price: ₹199</div>
+            <button><a href="{% url 'Order' %}">Order</a></button>
+        </div>
+
+        <!-- Deet -->
+        <div class="pesticide">
+            <img src= "{% static 'deet.jpeg' %}" alt="Deet">
+            <h3>Deet</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="89">500 ml - ₹89</option>
+                <option value="168">1 pack - ₹168</option>
+            </select>
+            <div class="price">Price: ₹89</div>
+            <button><a href="{% url 'Order' %}">Order</a></button>
+        </div>
+
+        <!-- Propoxur -->
+        <div class="pesticide">
+            <img src="{% static 'propoxur.jpg' %}" alt="Propoxur">
+            <h3>Propoxur</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="230">1 pack - ₹230</option>
+                <option value="380">3 packs - ₹380</option>
+            </select>
+            <div class="price">Price: ₹230</div>
+            <button><a href="{% url 'Order' %}">Order</a></button>
+        </div>
+
+        <!-- Diazinon -->
+        <div class="pesticide">
+            <img src="{% static 'diazinon.jpeg' %}" alt="Diazinon">
+            <h3>Diazinon</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="135">1 pack - ₹135</option>
+                <option value="265">2 packs - ₹265</option>
+            </select>
+            <div class="price">Price: ₹135</div>
+            <button><a href="{% url 'Order' %}">Order</a></button>
+        </div>
+
+        <!-- Dursban -->
+        <div class="pesticide">
+            <img src= "{% static 'dursban.jpg' %}" alt="Dursban">
+            <h3>Dursban</h3>
+            <p>Select quantity:</p>
+            <select>
+                <option value="245">1 pack - ₹245</option>
+                <option value="325">2 packs - ₹325</option>
+            </select>
+            <div class="price">Price: ₹245</div>
+            <button><a href="{% url 'Order' %}">Order</a></button>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="/home">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="/orders">
+            <i class="fas fa-shopping-basket"></i> Orders
+        </a>
+        <a href="/account">
+            <i class="fas fa-user"></i> Account
+        </a>
+    </div>
+
+</body>
+</html>
